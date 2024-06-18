@@ -49,7 +49,7 @@ if(isset($_POST['submit'])){
                     </div>
                     <div class="form-group">
                       <label for="exampleInputEmail3" required>Order Number</label>
-                      <input type="textbox" class="form-control" placeholder="Order Number" name="order_number"  value="<?php echo $order_number?>">
+                      <input type="number" class="form-control" placeholder="Order Number" name="order_number"  value="<?php echo $order_number?>">
                     </div>
                     
                     <button type="submit" class="btn btn-primary mr-2" name="submit">Submit</button>

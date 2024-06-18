@@ -102,9 +102,12 @@ if(!isset($_SESSION['IS_LOGIN'])){
               <span class="menu-title">Coupon Code</span>
             </a>
           </li>
-		  
-		  
-          
+        <li class="nav-item">
+            <a class="nav-link" href="dish.php">
+              <i class="mdi mdi-view-headline menu-icon"></i>
+              <span class="menu-title">Dish</span>
+            </a>
+          </li>          
         </ul>
       </nav>
       <!-- partial -->
