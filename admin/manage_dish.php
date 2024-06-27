@@ -1,6 +1,7 @@
 <?php 
 include('top.php');
 
+//prx(SERVER_DISH_IMAGE);
 $msg="";
 $category_id="";
 $dish="";
@@ -50,6 +51,7 @@ if(isset($_POST['submit'])){
 					$image_error="Invalid image format";
 				}else{
 					$image=rand(111111111,999999999).'_'.$_FILES['image']['name'];
+					//FOR UPLOADING A FILE IN PHP
 					move_uploaded_file($_FILES['image']['tmp_name'],SERVER_DISH_IMAGE.$image);
 					$image_condition=", image='$image'";
 				}

@@ -42,7 +42,6 @@ $res=mysqli_query($con,$sql);
                         <?php if(mysqli_num_rows($res)>0){
 						$i=1;
 						while($row=mysqli_fetch_assoc($res)){
-							print_r($row);
 						?>
 						<tr>
                             <td><?php echo $i?></td>
