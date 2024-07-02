@@ -5313,3 +5313,11 @@ h5.panel-title span {
     height: 10px;
     width: 30px;
 }
+
+.category_list .active{
+    color:#e02c2b;
+}
+.category_list .cat_checkbox{
+	width:15px;
+	height:12px;
+}

@@ -12,7 +12,7 @@ if(!isset($_SESSION['IS_LOGIN'])){
 	redirect('login.php');
 }
 $page_title='';
-if($cur_path=='' || $cur_path=='index.php'){
+if($cur_path=='' || $cur_path=='index.php'){    // for setting page title
 	$page_title='Dashboard';
 }elseif($cur_path=='category.php' || $cur_path=='manage_category.php'){
 	$page_title='Manage Category';
@@ -24,6 +24,10 @@ if($cur_path=='' || $cur_path=='index.php'){
 	$page_title='Manage Coupon Code';
 }elseif($cur_path=='dish.php' || $cur_path=='manage_dish.php'){
 	$page_title='Manage Dish';
+}elseif($cur_path=='banner.php' || $cur_path=='manage_banner.php'){
+	$page_title='Manage Banner';
+}elseif($cur_path=='contact_us.php'){
+	$page_title='Contact Us';
 }
 
 
@@ -131,7 +135,19 @@ if($cur_path=='' || $cur_path=='index.php'){
             </a>
           </li>
 		  
-		  
+          <li class="nav-item">
+            <a class="nav-link" href="banner.php">
+              <i class="mdi mdi-view-headline menu-icon"></i>
+              <span class="menu-title">Banner</span>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="contact_us.php">
+              <i class="mdi mdi-view-headline menu-icon"></i>
+              <span class="menu-title">Contact Us</span>
+            </a>
+          </li>
           
         </ul>
       </nav>
