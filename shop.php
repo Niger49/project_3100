@@ -1,8 +1,12 @@
 <?php
 include ("header.php");
 $cat_dish='';
+$cat_dish_arr=array();
 if(isset($_GET['cat_dish'])){
 	$cat_dish=$_GET['cat_dish'];
+    $cat_dish_arr=array_filter(explode(':',$cat_dish));
+    //pr($cat_dish_arr);
+    $cat_dish_str=implode(",",$cat_dish_arr);
 }
 ?>
 
@@ -22,9 +26,8 @@ if(isset($_GET['cat_dish'])){
                         <?php
                             $cat_id=0;
                             $product_sql="select * from dish where status=1";
-                            if(isset($_GET['cat_id']) && $_GET['cat_id']>0){
-                                $cat_id=get_safe_value($_GET['cat_id']);
-                                $product_sql.=" and category_id='$cat_id' ";
+                            if(isset($_GET['cat_dish']) && $_GET['cat_dish']!=''){
+                                $product_sql.=" and category_id in ($cat_dish_str) ";
                             }
                             $product_sql.=" order by dish desc";
                             $product_res=mysqli_query($con,$product_sql);
@@ -42,12 +45,24 @@ if(isset($_GET['cat_dish'])){
                                                         <img src="<?php echo SITE_DISH_IMAGE.$product_row['image']?>" alt="">
                                                     </a>
                                                 </div>
-                                                <div class="product-content">
+                                                <div class="product-content" id="dish_detail">
                                                     <h4>
                                                         <a href="javascript:void(0)"><?php echo $product_row['dish']?> </a>
                                                     </h4>
+                                                    <?php
+                                                    $dish_attr_res=mysqli_query($con,"select * from dish_details where status='1' and dish_id='".$product_row['id']."' order by price asc");
+                                                    ?>
                                                     <div class="product-price-wrapper">
-                                                        <span>100</span>
+                                                        <?php
+                                                        while($dish_attr_row=mysqli_fetch_assoc($dish_attr_res)){
+                                                            //pr($dish_attr_row);
+                                                            echo "<input type='radio' class='dish_radio' name='radio_".$product_row['id']."' value='".$product_row['id']."'/>";
+                                                            echo $dish_attr_row['attribute'];
+                                                            echo "&nbsp;";
+                                                            echo "<span class='price'>(".$dish_attr_row['price'].")</span>";
+                                                            echo "&nbsp;&nbsp;&nbsp";
+                                                        }
+                                                        ?>
                                                     </div>
                                                 </div>
                                             </div>
@@ -70,13 +85,18 @@ if(isset($_GET['cat_dish'])){
                                 <h4 class="shop-sidebar-title">Shop By Categories</h4>
                                 <div class="shop-catigory">
                                     <ul id="faq" class="category_list">
+                                        <li><a href="shop.php"><u>clear</u></a></li>
                                         <?php 
                                         while($cat_row=mysqli_fetch_assoc($cat_res)){
                                             $class="selected";
                                             if($cat_id==$cat_row['id']){
                                                 $class="active";
                                             }
-											echo "<li> <input onclick=set_checkbox('".$cat_row['id']."') type='checkbox' class='cat_checkbox' name='cat_arr[]' value='".$cat_row['id']."'/>".$cat_row['category']."</li>";  
+                                            $is_checked='';
+                                            if(in_array($cat_row['id'],$cat_dish_arr)){
+                                                $is_checked="checked='checked'";
+                                            }
+											echo "<li> <input $is_checked onclick=set_checkbox('".$cat_row['id']."') type='checkbox' class='cat_checkbox' name='cat_arr[]' value='".$cat_row['id']."'/>".$cat_row['category']."</li>";  
 
                                         }
                                         ?>
@@ -89,12 +109,17 @@ if(isset($_GET['cat_dish'])){
             </div>
         </div>
 		<form method="get" id="frmCatDish">
-			<input type="textbox" name="cat_dish" id="cat_dish" value='<?php echo $cat_dish?>'/>
+			<input type="hidden" name="cat_dish" id="cat_dish" value='<?php echo $cat_dish?>'/>
 		</form>
 		<script>
 			function set_checkbox(id){
 				var cat_dish=jQuery('#cat_dish').val();
-				cat_dish=cat_dish+":"+id;
+                var check=cat_dish.search(":"+id);
+                if(check!='-1'){   //if category id exist is the checkbox or not
+                    cat_dish=cat_dish.replace(":"+id,'');  // if exists for the time of deselection then replace with 'blank'
+                }else{
+                    cat_dish=cat_dish+":"+id;
+                }
 				jQuery('#cat_dish').val(cat_dish);
 				jQuery('#frmCatDish')[0].submit();
 			}

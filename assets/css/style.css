@@ -5321,3 +5321,24 @@ h5.panel-title span {
 	width:15px;
 	height:12px;
 }
+#dish_detail .dish_radio{
+    
+    width: 16px;
+    height: 12px;
+    margin-right: 5px;
+}
+#dish_detail .price{
+    
+    width: 16px;
+    height: 12px;
+    margin-right: 5px;
+}
+.error_field{
+    margin-top: -28px;
+    margin-bottom: 18px;
+    color:red;
+}
+.success_field{
+    margin-top: 10px;
+    color:green;
+}
