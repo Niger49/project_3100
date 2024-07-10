@@ -1,7 +1,6 @@
 <?php
 include ("header.php");
 ?>
-
 <div class="login-register-area pt-95 pb-100">
             <div class="container">
                 <div class="row">
@@ -19,14 +18,16 @@ include ("header.php");
                                 <div id="lg1" class="tab-pane active">
                                     <div class="login-form-container">
                                         <div class="login-register-form">
-                                            <form action="#" method="post">
-                                                <input type="text" name="user-name" placeholder="Username">
-                                                <input type="password" name="user-password" placeholder="Password">
+                                            <form method="post" id="frmLogin">
+                                                <input type="email" name="user_email" placeholder="Email" required>
+                                                <input type="password" name="user_password" placeholder="Password" required>
                                                 <div class="button-box">
                                                     <div class="login-toggle-btn">
                                                         <a href="#">Forgot Password?</a>
                                                     </div>
-                                                    <button type="submit"><span>Login</span></button>
+                                                    <button type="submit" id="login_submit">Login</button>
+													<input type="hidden" name="type" value="login"/>
+												   <div id="form_login_msg" class="success_field"></div>
                                                 </div>
                                             </form>
                                         </div>
@@ -37,15 +38,15 @@ include ("header.php");
                                         <div class="login-register-form">
                                             <form method="post" id="frmRegister">
                                                 <input type="text" name="name" placeholder="Name" id="name" required>
-                                                <input name="email" id="email" placeholder="Email" type="email" required>
-                                                <div id="email_error" class="error_field"></div>
+												<input name="email" id="email" placeholder="Email" type="email" required>
+												<div id="email_error" class="error_field"></div>
                                                 <input type="password" name="password" placeholder="Password" id="password" required>
                                                 <input type="text" name="mobile" placeholder="Mobile" id="mobile" required>
                                                 <div class="button-box">
                                                     <button type="submit" id="register_submit">Register</button>
                                                 </div>
-                                                <input type="hidden" name="type" value="register"/>
-                                                <div id="form_msg" class="success_field"></div>
+												<input type="hidden" name="type" value="register"/>
+												<div id="form_msg" class="success_field"></div>
                                             </form>
                                         </div>
                                     </div>
@@ -56,7 +57,7 @@ include ("header.php");
                 </div>
             </div>
         </div>
-
+        
 <?php
-include ("footer.php");
+include("footer.php");
 ?>
