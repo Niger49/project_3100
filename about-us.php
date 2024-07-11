@@ -6,7 +6,7 @@ include ("header.php");
             <div class="container">
                 <div class="breadcrumb-content">
                     <ul>
-                        <li><a href="shop.php">Home</a></li>
+                        <li><a href="<?php echo FRONT_SITE_PATH?>shop">Home</a></li>
                         <li class="active">About us </li>
                     </ul>
                 </div>
@@ -23,7 +23,7 @@ include ("header.php");
 
                             </p>
                             <div class="overview-btn mt-45">
-                                <a class="btn-style-2" href="shop.php"> Shop now! </a>
+                                <a class="btn-style-2" href="<?php echo FRONT_SITE_PATH?>shop"> Shop now! </a>
                             </div>
                             
                         </div>

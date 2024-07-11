@@ -10,19 +10,19 @@ include('constant.inc.php');
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <title><?php echo FRONT_SITE_NAME?></title> <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-        <link rel="stylesheet" href="assets/css/animate.css">
-        <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
-        <link rel="stylesheet" href="assets/css/slick.css">
-        <link rel="stylesheet" href="assets/css/chosen.min.css">
-        <link rel="stylesheet" href="assets/css/ionicons.min.css">
-        <link rel="stylesheet" href="assets/css/font-awesome.min.css">
-        <link rel="stylesheet" href="assets/css/simple-line-icons.css">
-        <link rel="stylesheet" href="assets/css/jquery-ui.css">
-        <link rel="stylesheet" href="assets/css/meanmenu.min.css">
-        <link rel="stylesheet" href="assets/css/style.css">
-        <link rel="stylesheet" href="assets/css/responsive.css">
-        <script src="assets/js/vendor/modernizr-2.8.3.min.js"></script>
+        <link rel="stylesheet" href="<?php echo FRONT_SITE_PATH?>assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="<?php echo FRONT_SITE_PATH?>assets/css/animate.css">
+        <link rel="stylesheet" href="<?php echo FRONT_SITE_PATH?>assets/css/owl.carousel.min.css">
+        <link rel="stylesheet" href="<?php echo FRONT_SITE_PATH?>assets/css/slick.css">
+        <link rel="stylesheet" href="<?php echo FRONT_SITE_PATH?>assets/css/chosen.min.css">
+        <link rel="stylesheet" href="<?php echo FRONT_SITE_PATH?>assets/css/ionicons.min.css">
+        <link rel="stylesheet" href="<?php echo FRONT_SITE_PATH?>assets/css/font-awesome.min.css">
+        <link rel="stylesheet" href="<?php echo FRONT_SITE_PATH?>assets/css/simple-line-icons.css">
+        <link rel="stylesheet" href="<?php echo FRONT_SITE_PATH?>assets/css/jquery-ui.css">
+        <link rel="stylesheet" href="<?php echo FRONT_SITE_PATH?>assets/css/meanmenu.min.css">
+        <link rel="stylesheet" href="<?php echo FRONT_SITE_PATH?>assets/css/style.css">
+        <link rel="stylesheet" href="<?php echo FRONT_SITE_PATH?>assets/css/responsive.css">
+        <script src="<?php echo FRONT_SITE_PATH?>assets/js/vendor/modernizr-2.8.3.min.js"></script>
     </head>
     <body>
         <!-- header start -->
@@ -37,15 +37,19 @@ include('constant.inc.php');
                         </div>
                         <div class="col-lg-8 col-md-8 col-12 col-sm-8">
                             <div class="account-curr-lang-wrap f-right">
+                                <?php
+                                if(isset($_SESSION['FOOD_USER_NAME'])){
+                                ?>
                                 <ul>
-                                    <li class="top-hover"><a href="#">Setting  <i class="ion-chevron-down"></i></a>
+                                    <li class="top-hover"><a href="#"><?php echo "Welcome ".$_SESSION['FOOD_USER_NAME'];?> <i class="ion-chevron-down"></i></a>
                                         <ul>
-                                            <li><a href="profile.php">Profile  </a></li>
-                                            <li><a href="order_history.php">Order History</a></li>
-                                            <li><a href="logout.php">Logout</a></li>
+                                            <li><a href="<?php echo FRONT_SITE_PATH?>profile">Profile  </a></li>
+                                            <li><a href="<?php echo FRONT_SITE_PATH?>order_history">Order History</a></li>
+                                            <li><a href="<?php echo FRONT_SITE_PATH?>logout">Logout</a></li>
                                         </ul>
                                     </li>
                                 </ul>
+                                <?php } ?>
                             </div>
                         </div>
                     </div>
@@ -56,22 +60,26 @@ include('constant.inc.php');
                     <div class="row">
                         <div class="col-lg-3 col-md-4 col-12 col-sm-4">
                             <div class="logo">
-                                <a href="index.php">
-                                    <img alt="" src="assets/img/logo/logo.png">
+                                <a href="<?php echo FRONT_SITE_PATH?>index">
+                                    <img alt="" src="<?php echo FRONT_SITE_PATH?>assets/img/logo/logo.png">
                                 </a>
                             </div>
                         </div>
                         <div class="col-lg-9 col-md-8 col-12 col-sm-8">
                             <div class="header-middle-right f-right">
                                 <div class="header-login">
-                                    <a href="login_register.php">
+                                <?php
+                                if(!isset($_SESSION['FOOD_USER_NAME'])){
+                                ?>
+                                    <a href="<?php echo FRONT_SITE_PATH?>login_register">
                                         <div class="header-icon-style">
-                                            <i class="icon-user icons"></i>
+                                            <i class="icon-user icons header_icon"></i>
                                         </div>
-                                        <div class="login-text-content">
+                                        <div class="login-text-content header_icon">
                                             <p>Register <br> or <span>Sign in</span></p>
                                         </div>
                                     </a>
+                                    <?php } ?>
                                 </div>
                                 <div class="header-wishlist">
                                    &nbsp;
@@ -101,9 +109,9 @@ include('constant.inc.php');
                             <div class="main-menu">
                                 <nav>
                                     <ul>
-                                        <li><a href="shop.php">Shop</a></li>
-                                        <li><a href="about-us.php">about</a></li>
-                                        <li><a href="contact-us.php">contact us</a></li>
+                                        <li><a href="<?php echo FRONT_SITE_PATH?>shop">Shop</a></li>
+                                        <li><a href="<?php echo FRONT_SITE_PATH?>about-us">about</a></li>
+                                        <li><a href="<?php echo FRONT_SITE_PATH?>contact-us">contact us</a></li>
                                     </ul>
                                 </nav>
                             </div>
@@ -119,9 +127,9 @@ include('constant.inc.php');
 							<div class="mobile-menu">
 								<nav id="mobile-menu-active">
 									<ul class="menu-overflow" id="nav">
-										<li><a href="shop.php">Home</a></li>
-										<li><a href="about-us.php">About Us</a></li>
-										<li><a href="contact-us.php">Contact Us</a></li>
+										<li><a href="<?php echo FRONT_SITE_PATH?>shop">Home</a></li>
+										<li><a href="<?php echo FRONT_SITE_PATH?>about-us">About Us</a></li>
+										<li><a href="<?php echo FRONT_SITE_PATH?>contact-us">Contact Us</a></li>
 									</ul>
 								</nav>
 							</div>

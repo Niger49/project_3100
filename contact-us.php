@@ -6,7 +6,7 @@ include ("header.php");
             <div class="container">
                 <div class="breadcrumb-content">
                     <ul>
-                        <li><a href="shop.php">Home</a></li>
+                        <li><a href="<?php echo FRONT_SITE_PATH?>shop">Home</a></li>
                         <li class="active"> Contact Us </li>
                     </ul>
                 </div>
@@ -22,7 +22,7 @@ include ("header.php");
                             </div>
                             <div class="contact-info-content">
                                 <h4>Our Location</h4>
-                                <p>012 345 678 / 123 456 789</p>
+                                <p>013 345 678 / 123 456 789</p>
                                 <p><a href="#">info@example.com</a></p>
                             </div>
                         </div>
@@ -34,7 +34,7 @@ include ("header.php");
                             </div>
                             <div class="contact-info-content">
                                 <h4>Contact us Anytime</h4>
-                                <p>Mobile: 012 345 678</p>
+                                <p>Mobile: 013 345 678</p>
                                 <p>Fax: 123 456 789</p>
                             </div>
                         </div>
