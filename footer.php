@@ -34,6 +34,9 @@
         <script src="<?php echo FRONT_SITE_PATH?>assets/js/owl.carousel.min.js"></script>
         <script src="<?php echo FRONT_SITE_PATH?>assets/js/plugins.js"></script>
         <script src="<?php echo FRONT_SITE_PATH?>assets/js/main.js"></script>
+        <script>
+		var FRONT_SITE_PATH="<?php echo FRONT_SITE_PATH?>";
+		</script>
         <script src="<?php echo FRONT_SITE_PATH?>assets/js/custom.js"></script>
     </body>
 </html>

@@ -38,10 +38,10 @@ include('constant.inc.php');
                         <div class="col-lg-8 col-md-8 col-12 col-sm-8">
                             <div class="account-curr-lang-wrap f-right">
                                 <?php
-                                if(isset($_SESSION['FOOD_USER_NAME'])){
-                                ?>
-                                <ul>
-                                    <li class="top-hover"><a href="#"><?php echo "Welcome ".$_SESSION['FOOD_USER_NAME'];?> <i class="ion-chevron-down"></i></a>
+								if(isset($_SESSION['FOOD_USER_NAME'])){
+								?>
+								<ul>
+                                    <li class="top-hover"><a href="#"><?php echo "Welcome ".$_SESSION['FOOD_USER_NAME'];?>  <i class="ion-chevron-down"></i></a>
                                         <ul>
                                             <li><a href="<?php echo FRONT_SITE_PATH?>profile">Profile  </a></li>
                                             <li><a href="<?php echo FRONT_SITE_PATH?>order_history">Order History</a></li>
@@ -49,7 +49,7 @@ include('constant.inc.php');
                                         </ul>
                                     </li>
                                 </ul>
-                                <?php } ?>
+								<?php } ?>
                             </div>
                         </div>
                     </div>
@@ -60,7 +60,7 @@ include('constant.inc.php');
                     <div class="row">
                         <div class="col-lg-3 col-md-4 col-12 col-sm-4">
                             <div class="logo">
-                                <a href="<?php echo FRONT_SITE_PATH?>index">
+                                <a href="<?php echo FRONT_SITE_PATH?>">
                                     <img alt="" src="<?php echo FRONT_SITE_PATH?>assets/img/logo/logo.png">
                                 </a>
                             </div>
@@ -68,18 +68,22 @@ include('constant.inc.php');
                         <div class="col-lg-9 col-md-8 col-12 col-sm-8">
                             <div class="header-middle-right f-right">
                                 <div class="header-login">
-                                <?php
-                                if(!isset($_SESSION['FOOD_USER_NAME'])){
-                                ?>
-                                    <a href="<?php echo FRONT_SITE_PATH?>login_register">
+                                    <?php
+									if(!isset($_SESSION['FOOD_USER_NAME'])){
+										?>
+									<a href="<?php echo FRONT_SITE_PATH?>login_register">
                                         <div class="header-icon-style">
                                             <i class="icon-user icons header_icon"></i>
                                         </div>
                                         <div class="login-text-content header_icon">
-                                            <p>Register <br> or <span>Sign in</span></p>
+											
+												<p>Register <br> or <span>Sign in</span></p>
+												
                                         </div>
                                     </a>
-                                    <?php } ?>
+									<?php
+											}
+											?>
                                 </div>
                                 <div class="header-wishlist">
                                    &nbsp;

@@ -21,10 +21,9 @@ include ("header.php");
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse risus est, pulvinar imperdiet risus non, tristique imperdiet justo. Donec tempus consequat orci et posuere. Nullam tempus, eros ut scelerisque aliquam, justo nisi scelerisque tellus, eget pharetra justo neque a dolor. Vivamus feugiat blandit tellus nec elementum. Aliquam eu purus tellus. Cras ut massa ut erat maximus porta non et nunc. Nam gravida venenatis felis, in ullamcorper enim vehicula et. Etiam quis lectus eleifend, accumsan risus sed, fringilla risus. Nunc ullamcorper laoreet est, in rhoncus dolor varius ut. Vivamus ut varius turpis. Praesent ornare eu orci sit amet congue. Morbi varius sed nulla a semper.</p>
                             <p>In dictum turpis sit amet sem ornare iaculis. Nunc posuere dui ac magna fringilla pharetra. Phasellus interdum pulvinar facilisis. Donec auctor rutrum malesuada. Curabitur consequat nisl lectus, vel hendrerit nisl feugiat nec. Curabitur nec iaculis odio. Donec scelerisque pretium nisi, iaculis volutpat ante hendrerit vitae. Sed pretium vitae arcu nec tempor. Quisque a enim blandit, tempus arcu eu, auctor nulla.
 
-                            </p>
+</p>
                             <div class="overview-btn mt-45">
-                                <a class="btn-style-2" href="<?php echo FRONT_SITE_PATH?>shop"> Shop now! </a>
-                            </div>
+                                <a class="btn-style-2" href="<?php echo FRONT_SITE_PATH?>shop">Shop now!</a>
                             
                         </div>
                     </div>

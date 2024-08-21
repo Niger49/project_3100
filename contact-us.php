@@ -22,7 +22,7 @@ include ("header.php");
                             </div>
                             <div class="contact-info-content">
                                 <h4>Our Location</h4>
-                                <p>013 345 678 / 123 456 789</p>
+                                <p>012 345 678 / 123 456 789</p>
                                 <p><a href="#">info@example.com</a></p>
                             </div>
                         </div>
@@ -34,7 +34,7 @@ include ("header.php");
                             </div>
                             <div class="contact-info-content">
                                 <h4>Contact us Anytime</h4>
-                                <p>Mobile: 013 345 678</p>
+                                <p>Mobile: 012 345 678</p>
                                 <p>Fax: 123 456 789</p>
                             </div>
                         </div>
@@ -69,7 +69,7 @@ include ("header.php");
                                                 <input name="email" placeholder="Email Address" type="email" required>
                                             </div>
                                         </div>
-                                        <div class="col-lg-4">
+										<div class="col-lg-4">
                                             <div class="contact-form-style mb-20">
                                                 <input name="mobile" placeholder="Mobile" type="text" required>
                                             </div>
@@ -94,7 +94,7 @@ include ("header.php");
                 </div>
             </div>
         </div>
-        
+
 <?php
 include("footer.php");
 ?>
